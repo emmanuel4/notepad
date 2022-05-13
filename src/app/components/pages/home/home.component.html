@@ -1,0 +1,19 @@
+<div class="notes">
+  <mat-card class="note" *ngFor="let note of notes$ | async">
+    <mat-card-title>{{note.title}}</mat-card-title>
+    <mat-card-subtitle>
+      {{note.date.toDate() | date}}
+    </mat-card-subtitle>
+    <mat-card-content>
+      <p>{{note.description}}</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-icon-button (click)="archiveNote(note.id)">
+        <mat-icon>archive</mat-icon>
+      </button>
+      <button mat-icon-button (click)="openDialog(note.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

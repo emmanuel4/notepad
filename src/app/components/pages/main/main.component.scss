@@ -1,0 +1,17 @@
+.home-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.content {
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  box-sizing: border-box;
+}

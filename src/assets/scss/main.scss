@@ -1,0 +1,21 @@
+$note-color: #feff9c;
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  .note {
+    width: 24.5rem;
+    margin: 1rem 0.4rem;
+    background-color: $note-color;
+    box-sizing: border-box;
+  }
+}
+
+.form {
+  min-width: 9.5rem;
+  max-width: 31.5rem;
+  margin: 0 auto;
+  .full-width {
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <a routerLink="/dashboard" class="home-link"><mat-icon>home</mat-icon><span>&nbsp;Notepad</span></a>
+  <span class="spacer"></span>
+  <a mat-icon-button class="toolbar-icon" routerLink="/dashboard/archived">
+    <mat-icon>inventory</mat-icon>
+  </a>
+  <a mat-icon-button class="toolbar-icon" routerLink="/dashboard/add-note">
+    <mat-icon>post_add</mat-icon>
+  </a>
+  <button mat-icon-button class="toolbar-icon" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

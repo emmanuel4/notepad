@@ -1,0 +1,38 @@
+<div class="main">
+  <a routerLink="/login" mat-button color="primary">
+    <mat-icon>chevron_left</mat-icon> &nbsp; Login
+  </a>
+  <h1 class="title">Register new user</h1>
+  <form class="form" [formGroup]="form" (submit)="save($event)">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput #email type="email" formControlName="email">
+      <mat-error *ngIf="form.get('email')!.invalid && form.get('email')!.errors && form.get('email')!.touched || form.get('email')!.dirty">
+        <span *ngIf="form.get('email')!.hasError('required')">
+          This field is required.
+        </span>
+        <span *ngIf="form.get('email')!.hasError('email')">
+          Invalid email.
+        </span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput #password type="password" formControlName="password">
+      <mat-error *ngIf="form.get('password')!.invalid && form.get('password')!.errors && form.get('password')!.touched || form.get('password')!.dirty">
+        <span *ngIf="form.get('password')!.hasError('required')">
+          This field is required.
+        </span>
+        <span *ngIf="form.get('password')!.hasError('minlength')">
+          The minimum length for this field is 8 characters.
+        </span>
+        <span *ngIf="form.get('password')!.hasError('pattern')">
+          Invalid password.
+        </span>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="form.invalid">Register</button>
+  </form>
+</div>

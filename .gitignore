@@ -32,7 +32,7 @@ chrome-profiler-events*.json
 
 # misc
 /.angular/cache
-/.sass-cache
+/.scss-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
@@ -44,3 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

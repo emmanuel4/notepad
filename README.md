@@ -1,27 +1,15 @@
-# BlockNotas
+# Notepad
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This project was generated with Angular version 13.1.2, for the styles I used the library Angular Material version 13.3.7, and for the backend I use the library Angular Fire version 7.3.0 to comunicate with firebase.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+For this project we can signin with a mail or use an google account, once in the notepad we can create, archive, unarchive and delete notes, and signout. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+For notes I generated an model interface with the followin properties:
+`id, title, description, date, archived`
 
-## Build
+To consume the firebase functions I create a service `api.service.ts`, where these functions are imported and used, most of them return a promise, so to avoid the asyncronity I use `async / await`, and the other functions return an observable.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+From UI Kit I use the `toolbar, icon, button, input, card, dialog and snackbar` componets.

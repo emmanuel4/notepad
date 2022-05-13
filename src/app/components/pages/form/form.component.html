@@ -1,0 +1,31 @@
+<h1>New note</h1>
+<form class="form" [formGroup]="form" (submit)="save($event)">
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput #title formControlName="title">
+    <mat-error *ngIf="form.get('title')!.invalid && form.get('title')!.errors && form.get('title')!.touched || form.get('title')!.dirty">
+      <span *ngIf="form.get('title')!.hasError('required')">
+        This field is required.
+      </span>
+      <span *ngIf="form.get('title')!.hasError('pattern')">
+        Invalid value.
+      </span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput #description formControlName="description"(input)="checkMaxLength(description)"></textarea>
+    <mat-hint align="end">{{description.value.length}} / 150</mat-hint>
+    <mat-error *ngIf="form.get('description')!.invalid && form.get('description')!.errors && form.get('description')!.touched || form.get('description')!.dirty">
+      <span *ngIf="form.get('description')!.hasError('required')">
+        This field is required.
+      </span>
+      <span *ngIf="form.get('description')!.hasError('minlength')">
+        The minimum length for this field is 25 characters.
+      </span>
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" [disabled]="form.invalid">Add</button>
+</form>
